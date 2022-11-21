@@ -1,4 +1,5 @@
-let prenom = "Matthieu";
+let prenom: string;
+prenom = "Matthieu";
 let age = 32;
 let sexe = true;
 var sports = ["foot", "rugby"];

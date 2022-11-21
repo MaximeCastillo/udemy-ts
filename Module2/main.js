@@ -1,4 +1,5 @@
-var prenom = "Matthieu";
+var prenom;
+prenom = "Matthieu";
 var age = 32;
 var sexe = true;
 var sports = ["foot", "rugby"];
