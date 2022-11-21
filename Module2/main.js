@@ -21,3 +21,14 @@ var afficherPersonne = function (prenom, age, sexe, sports, adresse) {
     console.log("".concat(adresse.cp, " ").concat(adresse.ville));
 };
 afficherPersonne(prenom, age, sexe, sports, adresse);
+// ES5
+// function anniversaire(age: number): number {
+//   return age + 1;
+// }
+// ES6
+var anniversaire = function (age) {
+    return age + 1;
+};
+var newAge;
+newAge = anniversaire(age);
+console.log("Age : ".concat(newAge));
