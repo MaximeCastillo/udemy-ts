@@ -1,23 +1,22 @@
-let prenom = "Matthieu";
-let age = 32;
-let sexe = true;
+var prenom = "Matthieu";
+var age = 32;
+var sexe = true;
 var sports = ["foot", "rugby"];
 var adresse = {
-  ligne: "rue des fleurs",
-  ville: "Toulouse",
-  cp: 31000
-}
-
-let afficherPersonne = (prenom, age, sexe, sports, adresse) => {
-  console.log(`Prénom : ${prenom}`);
-  console.log(`Age : ${age}`);
-  console.log(`Sexe : ${(sexe ? "Homme" : "Femme")}`);
-  for (var sport of sports) {
-    console.log(sport);
-  }
-  console.log('Adresse : ');
-  console.log(adresse.ligne);
-  console.log(`${adresse.cp} ${adresse.ville}`);
-}
-
-afficherPersonne(prenom, age, sexe, sports, adresse)
+    ligne: "rue des fleurs",
+    ville: "Toulouse",
+    cp: 31000
+};
+var afficherPersonne = function (prenom, age, sexe, sports, adresse) {
+    console.log("Pr\u00E9nom : ".concat(prenom));
+    console.log("Age : ".concat(age));
+    console.log("Sexe : ".concat(sexe ? "Homme" : "Femme"));
+    for (var _i = 0, sports_1 = sports; _i < sports_1.length; _i++) {
+        var sport = sports_1[_i];
+        console.log(sport);
+    }
+    console.log("Adresse : ");
+    console.log(adresse.ligne);
+    console.log("".concat(adresse.cp, " ").concat(adresse.ville));
+};
+afficherPersonne(prenom, age, sexe, sports, adresse);
