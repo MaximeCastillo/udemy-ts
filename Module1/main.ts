@@ -1,15 +1,12 @@
-const inputNb1 = document.querySelector("#nb1");
-const inputNb2 = document.querySelector("#nb2");
+const inputNb1 = document.querySelector("#nb1") as HTMLInputElement;
+const inputNb2 = document.querySelector("#nb2") as HTMLInputElement;
+const divResultat = document.querySelector(".resultat") as HTMLInputElement;
 
 document.querySelector("#calcul").addEventListener("click", () => {
-  let resultat = addition(inputNb1.value, inputNb2.value)
-  document.querySelector(".resultat").innerHTML = resultat
-})
+  let resultat = addition(+inputNb1.value, +inputNb2.value);
+  divResultat.innerHTML = resultat.toString();
+});
 
-function addition(nb1, nb2) {
-  if (typeof(nb1) === "number" && typeof(nb2) === "number") {
-    return nb1 + nb2
-  } else {
-    return "Les valeurs ne sont pas de type \"Number\""
-  }
+function addition(nb1:number, nb2:number) {
+  return nb1 + nb2;
 }
