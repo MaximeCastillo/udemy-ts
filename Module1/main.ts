@@ -1,8 +1,9 @@
 const inputNb1 = document.querySelector("#nb1") as HTMLInputElement;
 const inputNb2 = document.querySelector("#nb2") as HTMLInputElement;
 const divResultat = document.querySelector(".resultat") as HTMLInputElement;
+const btnSubmit = document.querySelector("#calcul") as HTMLButtonElement;
 
-document.querySelector("#calcul").addEventListener("click", () => {
+btnSubmit.addEventListener("click", () => {
   let resultat = addition(+inputNb1.value, +inputNb2.value);
   divResultat.innerHTML = resultat.toString();
 });
