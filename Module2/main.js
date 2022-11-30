@@ -1,32 +1,16 @@
-// enum CLASSE {
-//   GUERRIER = "Guerrier",
-//   VOLEUR = "Voleur",
-//   ARCHER = "Archer",
-// }
-// type Personnage = {
-//   nom: string;
-//   classe: string;
-// };
-// type Guerrier = {
-//   classe: CLASSE.GUERRIER;
-// }
-// type Voleur = {
-//   classe: CLASSE.VOLEUR;
-// }
-// const p1: Personnage & Guerrier = {
-//   nom: "Matthieu",
-//   classe: CLASSE.GUERRIER,
-// };
-// console.log(CLASSE.GUERRIER);
-var CLASSE;
-(function (CLASSE) {
-    CLASSE["GUERRIER"] = "Guerrier";
-    CLASSE["VOLEUR"] = "Voleur";
-    CLASSE["ARCHER"] = "Archer";
-})(CLASSE || (CLASSE = {}));
-var p1 = {
-    nom: "Matthieu",
-    classe: CLASSE.GUERRIER
-};
-console.log(CLASSE.GUERRIER);
-console.log(p1);
+/// Type "unknown"
+var test;
+test = 31;
+test = "Matthieu";
+test = true;
+// Comme test est 'unknown' est non simplement "any", cela évite de lui assigner n'importe quoi et il faut assigner dans une condition :
+var sexe;
+if (typeof test === "boolean") {
+    sexe = test;
+}
+console.log(sexe);
+/// Type "never"
+//Cette fonction ne retourne même pas le vide, ici pour l'exemple le throw lève une expection donc c'est un peu différent d'un return void
+function genererException(msg) {
+    throw { message: msg };
+}
