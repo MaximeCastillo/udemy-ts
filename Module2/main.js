@@ -32,3 +32,9 @@ var anniversaire = function (age) {
 var newAge;
 newAge = anniversaire(age);
 console.log("Age : ".concat(newAge));
+var matthieu = {
+    nom: "Matthieu",
+    age: 31,
+    classe: "Guerrier",
+    sports: ["foot", "rugby"]
+};

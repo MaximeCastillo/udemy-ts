@@ -41,8 +41,49 @@ afficherPersonne(prenom, age, sexe, sports, adresse);
 // ES6
 let anniversaire = (age: number): number => {
   return age + 1;
+};
+
+let newAge: number;
+newAge = anniversaire(age);
+console.log(`Age : ${newAge}`);
+
+/// 27. L'intersection
+
+// Avec les "types"
+// type Personnage = {
+//   nom: string;
+//   age: number;
+// };
+
+// type Humain = {
+//   classe: string;
+// };
+
+// type Homme = Personnage & Humain;
+
+// const matthieu: Homme = {
+//   nom: "Matthieu",
+//   age: 31,
+//   classe: "Guerrier"
+// };
+
+// Avec les "interfaces"
+interface Personnage {
+  nom: string;
+  age: number;
 }
 
-let newAge:number
-newAge = anniversaire(age)
-console.log(`Age : ${newAge}`);
+interface Humain {
+  classe: string;
+}
+
+interface Homme extends Personnage, Humain {
+  sports: string[];
+}
+
+const matthieu: Homme = {
+  nom: "Matthieu",
+  age: 31,
+  classe: "Guerrier",
+  sports: ["foot", "rugby"],
+};
