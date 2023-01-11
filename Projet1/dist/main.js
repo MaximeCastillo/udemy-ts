@@ -24,11 +24,23 @@ const yuan = {
     taux: 0.15,
 };
 const devises = [dollar, euro, livre, yuan];
-console.log(devises);
 const deviseInitSelect = document.querySelector("#devise-initiale");
 deviseInitSelect.innerHTML = genererListeOptionDevise(devises);
-const deviseFinalSelect = document.querySelector("#devise-finale");
-deviseFinalSelect.innerHTML = genererListeOptionDevise(devises);
+let deviseInitValeur = deviseInitSelect.value;
+deviseInitSelect.addEventListener("change", () => {
+    deviseInitValeur = deviseInitSelect.value;
+});
+const deviseFinaleSelect = document.querySelector("#devise-finale");
+deviseFinaleSelect.innerHTML = genererListeOptionDevise(devises);
+let deviseFinaleValeur = deviseFinaleSelect.value;
+deviseFinaleSelect.addEventListener("change", () => {
+    deviseFinaleValeur = deviseFinaleSelect.value;
+});
+let montant;
+const montantInput = document.querySelector("#montant");
+montantInput.addEventListener("keyup", () => {
+    montant = +montantInput.value;
+});
 function genererListeOptionDevise(devises) {
     let listeDeviseTxt = "";
     for (let devise of devises) {
