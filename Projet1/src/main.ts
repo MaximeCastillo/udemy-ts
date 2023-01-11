@@ -36,3 +36,21 @@ const yuan: DeviseType = {
 const devises: DeviseType[] = [dollar, euro, livre, yuan];
 
 console.log(devises);
+
+const deviseInitSelect = document.querySelector(
+  "#devise-initiale"
+)! as HTMLSelectElement;
+deviseInitSelect.innerHTML = genererListeOptionDevise(devises);
+
+const deviseFinalSelect = document.querySelector(
+  "#devise-finale"
+)! as HTMLSelectElement;
+deviseFinalSelect.innerHTML = genererListeOptionDevise(devises);
+
+function genererListeOptionDevise(devises: DeviseType[]): string {
+  let listeDeviseTxt = "";
+  for (let devise of devises) {
+    listeDeviseTxt += `<option value=${devise.code}>${devise.nom} - (${devise.symbole})</option>`
+  }
+  return listeDeviseTxt;
+}

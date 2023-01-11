@@ -25,4 +25,15 @@ const yuan = {
 };
 const devises = [dollar, euro, livre, yuan];
 console.log(devises);
+const deviseInitSelect = document.querySelector("#devise-initiale");
+deviseInitSelect.innerHTML = genererListeOptionDevise(devises);
+const deviseFinalSelect = document.querySelector("#devise-finale");
+deviseFinalSelect.innerHTML = genererListeOptionDevise(devises);
+function genererListeOptionDevise(devises) {
+    let listeDeviseTxt = "";
+    for (let devise of devises) {
+        listeDeviseTxt += `<option value=${devise.code}>${devise.nom} - (${devise.symbole})</option>`;
+    }
+    return listeDeviseTxt;
+}
 //# sourceMappingURL=main.js.map
